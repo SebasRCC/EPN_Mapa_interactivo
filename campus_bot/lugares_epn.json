@@ -15,6 +15,33 @@
         "lng": -78.48873039388924
     },
     {
+        "nombre": "Policomedor",
+        "alias": [
+            "policomedor",
+            "comedor",
+            "restaurante",
+            "almuerzos",
+            "desayunos",
+            "comprar comida",
+            "comprar almuerzo",
+            "comprar desayuno",
+            "comida",
+            "almuerzo",
+            "desayuno",
+            "comida rápida",
+            "comida rapida",
+            "comida rápida EPN",
+            "comida rapida EPN",
+            "comida rápida en la EPN",
+            "comida rapida en la EPN",
+            "comer"
+    
+        ],
+        "ubicacion": "Edificio 20",
+        "lat": -0.21012899413573227,
+        "lng": -78.48873039388924
+    },
+    {
         "nombre": "Departamento de Energía Eléctrica",
         "alias": [
             "facultad de eléctrica",
