@@ -1,0 +1,63 @@
+[
+    {
+        "nombre": "Departamento de Informática y Ciencias de la Computación",
+        "alias": [
+            "facultad de sistemas",
+            "sistemas",
+            "informática",
+            "computación",
+            "dicc"
+        ],
+        "ubicacion": "Edificio 20",
+        "lat": -0.21012899413573227,
+        "lng": -78.48873039388924
+    },
+    {
+        "nombre": "Departamento de Energía Eléctrica",
+        "alias": [
+            "facultad de eléctrica",
+            "eléctrica",
+            "ingeniería eléctrica",
+            "dee"
+        ],
+        "ubicacion": "Edificio 18 (Edificio compartido con la Facultad de Química)",
+        "lat": -0.20931,
+        "lng": -78.48934
+    },
+    {
+        "nombre": "Departamento de Ingeniería Mecánica",
+        "alias": [
+            "facultad de mecánica",
+            "mecánica",
+            "ingeniería mecánica",
+            "dim"
+        ],
+        "ubicacion": "Edificio 15",
+        "lat": -0.20950,
+        "lng": -78.48988
+    },
+    {
+        "nombre": "Departamento de Formación Básica",
+        "alias": [
+            "formación básica",
+            "dfb",
+            "ciencias básicas"
+        ],
+        "ubicacion": "Edificio 14 (Mucha suerte chamo prepo 😅)",
+        "lat": -0.20986,
+        "lng": -78.49019
+    },
+    {
+        "nombre": "Instituto de Ciencias Biológicas",
+        "alias": [
+            "ciencias biológicas",
+            "biológicas",
+            "museo de historia natural",
+            "museo",
+            "icb"
+        ],
+        "ubicacion": "Edificio 2",
+        "lat": -0.21156,
+        "lng": -78.49016
+    }
+]

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Campus Bot EPN - Mapa</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      padding: 10px;
+      margin: 0;
+      background: #f5f7fa;
+    }
+
+    h2 {
+      font-size: 2.5em;
+      text-align: center;
+      margin-bottom: 10px;
+      color: #003366; /* azul marino */
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+    }
+
+    .descripcion {
+      text-align: center;
+      font-size: 1.15em;
+      color: #555;
+      margin-top: -10px;
+      margin-bottom: 25px;
+      font-style: italic;
+    }
+
+    #input-container {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    #consulta {
+      width: 70%;
+      max-width: 600px;
+      padding: 10px;
+      font-size: 1.1em;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      padding: 10px 18px;
+      font-size: 1.1em;
+      margin-left: 10px;
+      border: none;
+      border-radius: 6px;
+      background-color: #2980b9;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #3498db;
+    }
+
+    #resultado {
+      margin-top: 10px;
+      font-weight: bold;
+      text-align: center;
+      font-size: 1.2em;
+      color: #34495e;
+      min-height: 1.5em;
+    }
+
+    #main-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .banner {
+      width: 150px;
+      height: 500px;
+      background: #e1ecf4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      overflow: hidden;
+    }
+
+    .banner img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      border-radius: 10px;
+      user-select: none;
+    }
+
+    #map {
+      height: 500px;
+      width: 700px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    @media (max-width: 900px) {
+      #main-container {
+        flex-direction: column;
+      }
+      #map {
+        width: 90%;
+        height: 400px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h2>Campus Bot EPN - Mapa Interactivo</h2>
+  <p class="descripcion">Encuentra fácilmente los departamentos y facultades dentro del campus de la Escuela Politécnica Nacional.</p>
+
+  <div id="input-container">
+    <input type="text" id="consulta" placeholder="¿Dónde está la facultad de sistemas?" />
+    <button onclick="buscar()">Buscar</button>
+  </div>
+
+  <div id="resultado"></div>
+
+  <div id="main-container">
+    <div class="banner">
+      <img src="/static/imagenes/bannerDos.jpg" alt="Banner izquierdo" />
+    </div>
+
+    <div id="map"></div>
+
+    <div class="banner">
+      <img src="/static/imagenes/bannerUno.jpg" alt="Banner derecho" />
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.min.js"></script>
+
+  <script>
+    const map = L.map('map').setView([-0.211256, -78.489164], 18);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19
+    }).addTo(map);
+
+    let marcador;
+    let controlRuta;
+
+    function buscar() {
+      const pregunta = document.getElementById('consulta').value;
+      if (!pregunta) return alert("Escribe una consulta");
+
+      fetch('/buscar', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ pregunta })
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          const lugar = data.lugar;
+          document.getElementById('resultado').textContent = lugar.nombre + " está en " + lugar.ubicacion;
+
+          if (marcador) map.removeLayer(marcador);
+          marcador = L.marker([lugar.lat, lugar.lng]).addTo(map)
+            .bindPopup(`<b>${lugar.nombre}</b><br>${lugar.ubicacion}`).openPopup();
+
+          if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(pos => {
+              const userLatLng = [pos.coords.latitude, pos.coords.longitude];
+
+              L.marker(userLatLng).addTo(map).bindPopup("Tú estás aquí").openPopup();
+
+              if (controlRuta) map.removeControl(controlRuta);
+
+              controlRuta = L.Routing.control({
+                waypoints: [
+                  L.latLng(userLatLng),
+                  L.latLng(lugar.lat, lugar.lng)
+                ],
+                routeWhileDragging: false,
+                show: false,
+                addWaypoints: false,
+                draggableWaypoints: false,
+                createMarker: () => null
+              }).addTo(map);
+
+              map.fitBounds([userLatLng, [lugar.lat, lugar.lng]]);
+            }, () => {
+              alert("No se pudo obtener tu ubicación.");
+            });
+          } else {
+            alert("Tu navegador no permite geolocalización.");
+          }
+        } else {
+          document.getElementById('resultado').textContent = data.mensaje;
+        }
+      })
+      .catch(() => {
+        document.getElementById('resultado').textContent = "Error al comunicarse con el servidor.";
+      });
+    }
+  </script>
+</body>
+</html>
