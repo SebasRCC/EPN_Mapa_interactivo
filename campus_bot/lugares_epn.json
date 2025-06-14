@@ -6,7 +6,9 @@
             "sistemas",
             "informática",
             "computación",
-            "dicc"
+            "dicc",
+            "eficio 20",
+            "20"
         ],
         "ubicacion": "Edificio 20",
         "lat": -0.21012899413573227,
@@ -18,7 +20,9 @@
             "facultad de eléctrica",
             "eléctrica",
             "ingeniería eléctrica",
-            "dee"
+            "dee",
+            "18",
+            "edificio 18"
         ],
         "ubicacion": "Edificio 18 (Edificio compartido con la Facultad de Química)",
         "lat": -0.20931,
@@ -30,7 +34,9 @@
             "facultad de mecánica",
             "mecánica",
             "ingeniería mecánica",
-            "dim"
+            "dim", 
+            "eficio 15",
+            "15"
         ],
         "ubicacion": "Edificio 15",
         "lat": -0.20950,
@@ -42,9 +48,11 @@
             "formación básica",
             "dfb",
             "ciencias básicas", 
-            "prepo"
+            "prepo", 
+            "edificio 14",
+            "14"
         ],
-        "ubicacion": "Edificio 14 (Mucha suerte chamo prepo 😅)",
+        "ubicacion": "Edificio 14 (Mucha suerte chamo prepo)",
         "lat": -0.20986,
         "lng": -78.49019
     },
@@ -60,5 +68,190 @@
         "ubicacion": "Edificio 2",
         "lat": -0.21156,
         "lng": -78.49016
+    },
+    {
+        "nombre": "Centro de educación continua",
+        "alias": [
+            "centro de educación continua",
+            "cec",
+            "ingles", 
+            "edificio 36",
+            "36"
+        ],
+        "ubicacion": "Edificio 36",
+        "lat": -0.20922,
+        "lng": -78.48711
+    },
+        {
+        "nombre": "Aulas del centro de Cultura Física (camerino norte)",
+        "alias": [
+            "camerinos",
+            "culta física",
+            "camerino norte",
+            "aulas cultura física",
+            "aulas cultura física norte"
+        ],
+        "ubicacion": "Edificio 41",
+        "lat": -0.211199,
+        "lng": -78.489035
+    },
+        {
+        "nombre": "Poligym",
+        "alias": [
+            "poligym",
+            "gym",
+            "gimnasio poligym",
+            "gimnasio",
+            "ignacio"
+        ],
+        "ubicacion": "Edificio 40",
+        "lat": -0.21189,
+        "lng": -78.48983
+    },
+        {
+        "nombre": "Ex Junior College (CEI)",
+        "alias": [
+            "ex junior college",
+            "cei",
+            "edificio 39",
+            "39"
+        ],
+        "ubicacion": "Edificio 39, afuera de la EPN",
+        "lat": -0.208863,
+        "lng": -78.486362
+    },
+        {
+        "nombre": "Coro",
+        "alias": [
+            "coro"
+        ],
+        "ubicacion": "Edificio 35, bajo las gradas del cec",
+        "lat": -0.20987,
+        "lng": -78.487263
+    },
+        {
+        "nombre": "Centro de acopio de Resudios Sólidos",
+        "alias": [
+            "centro de acopio de residuos sólidos"
+        ],
+        "ubicacion": "Edificio 34",
+        "lat": -0.211291,
+        "lng": -78.488430
+    },
+        {
+        "nombre": "Cancha de mecánica",
+        "alias": [
+            "cancha de mecánica",
+            "cancha mecánica",
+            "cancha de fútbol mecánica",
+            "cancha fútbol mecánica"
+        ],
+        "ubicacion": "Entre el edificio 15 (Facultad de mecánica) y el edificio 18 (Facultad de eléctrica)",
+        "lat": -0.209887,
+        "lng": -78.489680
+    },
+        {
+        "nombre": "Canchas deportivas",
+        "alias": [
+            "canchas deportivas",
+            "canchas de volley",
+            "canchas de basket",
+            "volley",
+            "basket",
+            "cancha de volley",
+            "cancha de basket"
+        ],
+        "ubicacion": "Detrás del edificio 12 (Facultad de Ciencias)",
+        "lat": -0.211128,
+        "lng": -78.489584
+    },
+        {
+        "nombre": "Estadio de la EPN",
+        "alias": [
+            "poli estadio",
+            "estadio",
+            "poli estadio de la EPN",
+            "estadio de la EPN",
+            "pista atletismo",
+            "pista de atletismo",
+            "pista atlética"
+        ],
+        "ubicacion": "",
+        "lat": -0.21190,
+        "lng": -78.48908
+    },
+        {
+        "nombre": "Escuela de tecnólogos",
+        "alias": [
+            "Esfot",
+            "edificio 21",
+            "21",
+            "tecnólogos"
+        ],
+        "ubicacion": "Edificio 21",
+        "lat": -0.210720,
+        "lng": -78.488112
+    },
+        {
+        "nombre": "Facultad de Ingeniería en Geología, Minas, Petróleos",
+        "alias": [
+            "petroleos",
+            "geología",
+            "edificio 13",
+            "13",
+            "facultad de geología",
+            "facultad de minas",
+            "facultad de petróleo",
+            "facultad de geología, minas, petróleo"
+
+        ],
+        "ubicacion": "Edificio 13",
+        "lat": -0.21103,
+        "lng": -78.48935
+    },
+        {
+        "nombre": "Facultad de Ciencias",
+        "alias": [
+            "facultad de ciencias",
+            "ciencias",
+            "física",
+            "mate",
+            "matemáticas",
+            "matematica",
+            "edificio 12",
+            "12"
+        ],
+        "ubicacion": "Edificio 12",
+        "lat": -0.21078,
+        "lng": -78.48982
+    },
+        {
+        "nombre": "Bombonera",
+        "alias": [
+            "cancha de tecnologos",
+            "bombonera",
+            "cancha de futbol tecnologos",
+            "cancha futbol tecnologos"
+        ],
+        "ubicacion": "",
+        "lat": -0.210513,
+        "lng": -78.488624
+    },
+        {
+        "nombre": "Asociación de Estudiantes de facultad de Ingeniería en Sistemas",
+        "alias": [
+            "aso",
+            "aeis",
+            "asociación de estudiantes de ingeniería en sistemas",
+            "asociación de estudiantes de sistemas",
+            "asociación de estudiantes de informática",
+            "asociación de estudiantes de computación",
+            "asociación de estudiantes de facultad de sistemas",
+            "asociación de estudiantes de facultad de informática",
+            "asociación de estudiantes de facultad de computación"
+        ],
+        "ubicacion": "Debajo del edicio 20 (Facultad de Sistemas)",
+        "lat": -0.210456,
+        "lng": -78.488866
     }
 ]
