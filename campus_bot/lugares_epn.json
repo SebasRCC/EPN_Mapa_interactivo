@@ -34,8 +34,9 @@
             "comida rapida EPN",
             "comida rápida en la EPN",
             "comida rapida en la EPN",
-            "comer"
-    
+            "comer",
+            "almorzar",
+            "desayunar"
         ],
         "ubicacion": "Edificio 20",
         "lat": -0.21012899413573227,
