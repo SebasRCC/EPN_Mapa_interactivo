@@ -98,8 +98,8 @@ Sigue estos pasos para correr el bot en tu computador:
 ## 🧑‍💻 Autores
 
 Sebas Ramos – [GitHub](https://github.com/tu-usuario)
-Juan Mateo Quisilema
-Jhair Zambrano
+Juan Mateo Quisilema - [GitHub](https://github.com/JuanMateoQ)
+Jhair Zambrano - [GitHub](https://github.com/Jhairzp27)
 
 ---
 
